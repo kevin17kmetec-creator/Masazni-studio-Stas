@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+body {
+  background-color: #1e293b; /* Lighter dark blue charcoal */
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Gold Gradient for Headings */
+.text-gold-gradient {
+  background: linear-gradient(to right, #D4AF37, #FFF2CD, #AA7C11);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+
+/* Organic shapes matching the reference */
+.organic-shape-1 {
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+}
+
+.organic-shape-2 {
+  border-radius: 40% 60% 50% 50% / 50% 50% 50% 50%;
+}
+
+/* Atmospheric Light Leaks - Green Tints */
+.light-leak-1 {
+  background: radial-gradient(ellipse at center, rgba(76, 175, 80, 0.1) 0%, transparent 60%);
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.light-leak-2 {
+  background: radial-gradient(ellipse at center, rgba(46, 125, 50, 0.08) 0%, transparent 60%);
+  filter: blur(70px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+html {
+  /* scroll-behavior: smooth removed to fix page load position issues */
+}
+
+/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
