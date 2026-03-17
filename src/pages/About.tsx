@@ -51,8 +51,6 @@ const AboutPage = ({ lang }: { lang: string }) => {
               src="https://cz8ee99rm0kevgfc.public.blob.vercel-storage.com/STAS%CC%8C-copy-min-684x1024.jpg" 
               alt="Staš - Masažni terapevt" 
               className="w-full h-auto rounded-sm shadow-2xl relative z-10 border border-white/5"
-              loading="lazy"
-              decoding="async"
             />
           </motion.div>
           <div className="space-y-8">

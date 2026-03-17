@@ -126,7 +126,6 @@ const HeroSection = ({ lang }: { lang: string }) => (
         alt="Hero Background" 
         className="w-full h-full object-cover opacity-20"
         referrerPolicy="no-referrer"
-        decoding="async"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#1e293b]/10 via-[#1e293b]/60 to-[#1e293b]"></div>
     </div>
@@ -165,8 +164,6 @@ const HeroSection = ({ lang }: { lang: string }) => (
             alt="Staš - Masažni terapevt" 
             className="w-full h-full object-cover organic-shape-1 shadow-2xl relative z-10"
             referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
           />
           <div className="absolute -inset-2 border border-white/10 organic-shape-1 z-0 mix-blend-overlay"></div>
         </div>
@@ -192,8 +189,6 @@ const SubscriptionsSection = ({ lang }: { lang: string }) => (
           alt="Spa produkti in ambient" 
           className="w-full h-full object-cover organic-shape-2 shadow-2xl relative z-10"
           referrerPolicy="no-referrer"
-          loading="lazy"
-          decoding="async"
         />
         <div className="absolute -inset-2 border border-white/10 organic-shape-2 z-0 mix-blend-overlay"></div>
       </div>
@@ -244,7 +239,7 @@ const ServicesSection = ({ lang }: { lang: string }) => (
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)] blur-xl -z-10 scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border border-slate-600/30 p-1 transition-transform duration-700 group-hover:scale-105">
-              <img src={srv.img} alt={srv.title} className="w-full h-full object-cover rounded-full filter brightness-90 group-hover:brightness-110 transition-all duration-700" referrerPolicy="no-referrer" loading="lazy" decoding="async" />
+              <img src={srv.img} alt={srv.title} className="w-full h-full object-cover rounded-full filter brightness-90 group-hover:brightness-110 transition-all duration-700" referrerPolicy="no-referrer" />
             </div>
           </div>
           

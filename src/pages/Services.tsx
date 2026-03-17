@@ -112,8 +112,6 @@ const ServicesPage = ({ lang }: { lang: string }) => {
                       src={srv.img} 
                       alt={srv.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0c1115]/80 md:from-transparent to-transparent"></div>
                   </div>

@@ -45,8 +45,6 @@ const ServiceDetail = ({ lang }: { lang: string }) => {
                 alt={service.title} 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-                loading="lazy"
-                decoding="async"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold-gradient p-[1px] rounded-sm -z-10 hidden md:block">

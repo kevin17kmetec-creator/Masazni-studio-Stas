@@ -1,25 +1,18 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calendar as CalendarIcon, Clock, User, Phone, Mail, Check, MapPin, Activity, Heart, Leaf, Sparkles, Menu, X, ArrowUp, ChevronDown, Facebook, Instagram } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigationType } from 'react-router-dom';
 
-// Lazy Import Pages
-const HomePage = lazy(() => import('./pages/Home'));
-const AboutPage = lazy(() => import('./pages/About'));
-const ServicesPage = lazy(() => import('./pages/Services'));
-const PricelistPage = lazy(() => import('./pages/Pricelist'));
-const ContactPage = lazy(() => import('./pages/Contact'));
-const BookingPage = lazy(() => import('./pages/Booking'));
-const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const Terms = lazy(() => import('./pages/Terms'));
-
-// Loading Fallback
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#0f151a]">
-    <div className="w-12 h-12 border-4 border-[#D4AF37]/30 border-t-[#D4AF37] rounded-full animate-spin"></div>
-  </div>
-);
+// Import Pages
+import HomePage from './pages/Home';
+import AboutPage from './pages/About';
+import ServicesPage from './pages/Services';
+import PricelistPage from './pages/Pricelist';
+import ContactPage from './pages/Contact';
+import BookingPage from './pages/Booking';
+import ServiceDetail from './pages/ServiceDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 // Photorealistic Leaf Component using CSS masking for seamless integration
 const PhotorealisticLeaf = ({ src, className, blur = 'blur-md', opacity = 'opacity-80' }: { src: string, className?: string, blur?: string, opacity?: string }) => (
@@ -33,8 +26,6 @@ const PhotorealisticLeaf = ({ src, className, blur = 'blur-md', opacity = 'opaci
         WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%)'
       }}
       referrerPolicy="no-referrer"
-      loading="lazy"
-      decoding="async"
     />
   </div>
 );
@@ -473,19 +464,17 @@ export default function App() {
           <Navbar lang={lang} setLang={setLang} />
           
           <main>
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<HomePage lang={lang} />} />
-                <Route path="/o-nas" element={<AboutPage lang={lang} />} />
-                <Route path="/storitve" element={<ServicesPage lang={lang} />} />
-                <Route path="/cenik" element={<PricelistPage lang={lang} />} />
-                <Route path="/kontakt" element={<ContactPage lang={lang} />} />
-                <Route path="/rezervacija" element={<BookingPage lang={lang} />} />
-                <Route path="/storitev/:id" element={<ServiceDetail lang={lang} />} />
-                <Route path="/pravilnik-o-zasebnosti" element={<PrivacyPolicy lang={lang} />} />
-                <Route path="/splosni-pogoji" element={<Terms lang={lang} />} />
-              </Routes>
-            </Suspense>
+            <Routes>
+              <Route path="/" element={<HomePage lang={lang} />} />
+              <Route path="/o-nas" element={<AboutPage lang={lang} />} />
+              <Route path="/storitve" element={<ServicesPage lang={lang} />} />
+              <Route path="/cenik" element={<PricelistPage lang={lang} />} />
+              <Route path="/kontakt" element={<ContactPage lang={lang} />} />
+              <Route path="/rezervacija" element={<BookingPage lang={lang} />} />
+              <Route path="/storitev/:id" element={<ServiceDetail lang={lang} />} />
+              <Route path="/pravilnik-o-zasebnosti" element={<PrivacyPolicy lang={lang} />} />
+              <Route path="/splosni-pogoji" element={<Terms lang={lang} />} />
+            </Routes>
           </main>
 
           <Footer lang={lang} />
